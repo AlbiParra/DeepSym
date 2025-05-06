@@ -6,10 +6,12 @@ import torch
 from models import EffectRegressorMLP
 import data
 
+# Load an .opts file from command line
 parser = argparse.ArgumentParser("Train effect prediction models.")
 parser.add_argument("-opts", help="option file", type=str, required=True)
 args = parser.parse_args()
 
+# Save parameters and create the create the directory for the saves 
 opts = yaml.safe_load(open(args.opts, "r"))
 if not os.path.exists(opts["save"]):
     os.makedirs(opts["save"])

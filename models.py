@@ -28,6 +28,7 @@ class EffectRegressorMLP:
         self.iteration = 0
         self.save_path = opts["save"]
 
+    # Predict an effect after receiving an observation and an action
     def loss1(self, sample):
         obs = sample["observation"].to(self.device)
         effect = sample["effect"].to(self.device)
@@ -38,7 +39,8 @@ class EffectRegressorMLP:
         effect_pred = self.decoder1(h_aug)
         loss = self.criterion(effect_pred, effect)
         return loss
-
+    
+    # Modelling the effects given the relationships between objects
     def loss2(self, sample):
         obs = sample["observation"].to(self.device)
         effect = sample["effect"].to(self.device)

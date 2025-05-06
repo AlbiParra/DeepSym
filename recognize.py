@@ -1,3 +1,4 @@
+# automatic generation of a symbolic description in a random 3D scene, recognise objects and translate everything in a PPDDL problem
 import os
 import argparse
 import rospy

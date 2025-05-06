@@ -1,3 +1,5 @@
+# Generate a PPDDL from a DecisionTree
+
 import os
 import argparse
 import yaml

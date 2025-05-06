@@ -1,9 +1,12 @@
+# Usefull Toolbox file 
+
 import torch
 import numpy as np
 from sklearn.tree import _tree
 from torch.distributions import Gumbel
 
 
+# Used for clustering with pyTorch
 def kmeans(x, k, centroids=None, max_iter=None, epsilon=0.01):
     """
     x: data set of size (n, d) where n is the sample size.
@@ -51,7 +54,7 @@ def kmeans(x, k, centroids=None, max_iter=None, epsilon=0.01):
 
     return centroids, next_assigns, prev_mse, it
 
-
+# Learn rules from a decision tree and import on a PPDDL file
 def tree_to_code(tree, feature_names, effect_names, obj_names):
     tree_ = tree.tree_
 
@@ -213,7 +216,7 @@ def return_device():
     else:
         return torch.device("cpu")
 
-
+# Segmentation of 2D images
 def cc_pix_avg(img, x, y):
     height, width = img.shape
     img[x, y] = False

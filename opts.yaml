@@ -1,0 +1,20 @@
+#starting configuration for training the network
+
+batch_norm: true #normalization of the input of each layer
+cnn: true #Convolutional Neural Network, used for spacial data
+epoch1: 300 #we control all the dataset n times, with 300 is accurate but risk of overfitting 
+batch_size1: 128 #update of the weigths every 128 examples
+learning_rate1: 0.00005 #slow training but increase the stability
+code1_dim: 2  #dimension of the compressed data (decoder encoder)
+filters1: [1, 32, 64, 128, 256] #convolutional filters, 1 channel to 256
+epoch2: 300
+batch_size2: 128
+learning_rate2: 0.00005
+code2_dim: 1
+filters2: [2, 32, 64, 128, 256]
+hidden_dim: 128  #number of neurons in the dense layer
+depth: 2
+size: 42
+device: cuda
+load: null  #we start a new model from zero
+save: save/stable1

@@ -1,3 +1,4 @@
+# File for assigning category to different objects
 import os
 import argparse
 import torch
